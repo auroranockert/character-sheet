@@ -1,0 +1,306 @@
+\documentclass{rpgcharsheet}
+
+\begin{document}
+\unitlength\textwidth
+\divide\unitlength 420
+
+\pagenumbering{gobble}
+
+\noindent\begin{picture}(420,594)
+
+  \put(0,532){\includegraphics[width=200pt]{birthright.png}}
+
+  %
+  % PERSONAL BLOCK
+  %
+  \put(155,500){\makebox(265,75)[t]{
+    \begin{minipage}[t][40\unitlength][t]{265\unitlength}
+      \renewcommand{\arraystretch}{1.5}
+      \begin{tabularx}{265\unitlength}{XXXX}
+        \tfont name && \tfont player & \\
+        \cmidrule(lr){1-2}\cmidrule(l){3-4}
+
+        \tfont level && \tfont deity & \\
+        \cmidrule(lr){1-2}\cmidrule(l){3-4}
+
+        \tfont size & \tfont race & \tfont culture & \\
+        \cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(l){3-4}
+      \end{tabularx}
+    \end{minipage}
+  }}
+
+  %
+  % LEFT COLUMN
+  %
+  \put(0,30){\makebox(220,500)[t]{
+    % \setlength{\fboxsep}{0cm}
+    % \makebox(100, 200)[t]{\parbox{100\unitlength}{
+    % \begin{tabularx}{100\unitlength}{B{45} B{10} B{45}}
+    %   \tfont hp && \tabularnewline\cline{1-3}
+    %   \nfont total && \nfont current \tabularnewline
+    %   && \tabularnewline\cline{1-1}\cline{3-3}
+    % \end{tabularx}
+    % }}
+    % \framebox(100, 200){\parbox{205\unitlength}{
+    % }}
+    
+    \begin{minipage}[t][500\unitlength][b]{220\unitlength}
+      \begin{tabularx}{220\unitlength}{X}
+        \tfont attacks \tabularnewline\cmidrule(l){1-1}
+        \nfont melee \tabularnewline
+        \nfont ranged \tabularnewline
+        \nfont cmb \tabularnewline
+      \end{tabularx} \vspace{5mm}
+      
+      \begin{tabularx}{220\unitlength}{X}
+        \tfont defense \tabularnewline\cmidrule(l){1-1}
+        \nfont ac \tabularnewline
+        \nfont cmd \tabularnewline
+        \nfont touch \tabularnewline
+        \nfont flat-foot \tabularnewline
+      \end{tabularx} \vspace{5mm}
+      
+      \begin{tabularx}{220\unitlength}{X A{2} A{12} A{2} A{12} A{2} A{12} A{2} A{12} A{2} A{20} A{2} A{20} A{2} A{20}}
+        \tfont weapons && \multicolumn{7}{c}{\lfont base} && \lfont dmg && \lfont crit. && \lfont type \tabularnewline\cmidrule(l){1-15}
+        \weapon
+        \weapon
+        \weapon
+        \weapon
+      \end{tabularx} \vspace{5mm}
+      
+      \begin{tabularx}{220\unitlength}{X A{2} A{20} A{2} A{20} A{2} A{20} A{2} A{20}}
+        \tfont armor && \lfont armor class && \lfont max dex. && \lfont check penalty && \lfont arcane failure \tabularnewline\cmidrule(l){1-9}
+        \armor
+        \armor
+        \armor
+        \armor
+        \nfont total && && && && \tabularnewline\cmidrule(l){3-3}\cmidrule(l){5-5}\cmidrule(l){7-7}\cmidrule(l){9-9}
+      \end{tabularx} \vspace{5mm}
+
+      \begin{tabularx}{220\unitlength}{X A{20} A{5} A{20}}
+        \tfont speed & \lfont ft. && \lfont sq. \tabularnewline\cmidrule(l){1-4}
+        \nfont base \tabularnewline\cline{2-2}\cline{4-4}
+        \nfont reduced \tabularnewline\cline{2-2}\cline{4-4}
+        \nfont climb \tabularnewline\cline{2-2}\cline{4-4}
+        \nfont swim \tabularnewline\cline{2-2}\cline{4-4}
+      \end{tabularx}
+    \end{minipage}
+  }}
+
+  %
+  % RIGHT COLUMN
+  %
+  \put(235,0){\makebox(185,500)[t]{
+    \begin{minipage}[t][500\unitlength][t]{185\unitlength}
+      %
+      % SAVES
+      %
+      \begin{tabularx}{185\unitlength}{X A{18} A{8} A{18} A{8} A{18} A{8} A{18} A{8} A{18}}
+         \tfont save & \lfont total && \lfont base && \lfont ability && \lfont misc && \lfont temp. \tabularnewline\cmidrule(l){1-10}
+         \nfont fortitude && $=$ && $+$ & {\color{gray} \lfont (con)} & $+$ && $+$ & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
+         \nfont reflex && $=$ && $+$ & {\color{gray} \lfont (dex)} & $+$ && $+$ & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
+         \nfont will && $=$ && $+$ & {\color{gray} \lfont (wis)} & $+$ && $+$ & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
+         \nfont spell resistance \tabularnewline\cline{2-10}
+         \nfont notes \tabularnewline\cline{2-10}
+      \end{tabularx} \vspace{5mm}
+  
+      %
+      % SKILLS
+      %
+      \begin{tabularx}{185\unitlength}{A{10} X A{10} A{15} A{8} A{15} A{8} A{15} A{8} A{15}}
+        \multicolumn{2}{X}{\tfont skill name} && \lfont total && \lfont base && \lfont abilty && \lfont misc. \tabularnewline\cmidrule(l){1-10}
+        \skill{acrobatics}{dex}
+        \skill{appraise}{int}
+        \skill{bluff}{cha}
+        \skill{climb}{str}
+        \skill{craft (\hfill)}{int}
+        \skill{diplomacy}{cha}
+        \trainskill{disable device}{dex}
+        \skill{disguise}{cha}
+        \skill{escape artist}{dex}
+        \skill{fly}{dex}
+        \trainskill{handle animal}{cha}
+        \skill{heal}{wis}
+        \skill{intimidate}{cha}
+        \trainskill{knowledge (arcana)}{int}
+        \trainskill{knowledge (bloodlines)}{int}
+        \trainskill{knowledge (culture)}{int}
+        \trainskill{knowledge (engineering)}{int}
+        \trainskill{knowledge (geography)}{int}
+        \trainskill{knowledge (history)}{int}
+        \trainskill{knowledge (nature)}{int}
+        \trainskill{knowledge (planes)}{int}
+        \trainskill{knowledge (religion)}{int}
+        \trainskill{linguistics}{int}
+        \skill{perception}{wis}
+        \skill{perform (\hfill)}{cha}
+        \trainskill{profession (\hfill)}{wis}
+        \skill{ride}{dex}
+        \skill{sense motive}{wis}
+        \trainskill{sleight of hand}{dex}
+        \trainskill{spellcraft}{int}
+        \skill{stealth}{dex}
+        \skill{survival}{wis}
+        \skill{swim}{str}
+        \trainskill{use magic device}{cha}
+        \multicolumn{10}{B{185}}{\hfill \tiny\scshape $\cancel\square$ class skill \hspace{2ex} $\bullet$ untrained skill}
+      \end{tabularx} \vspace{3mm}
+
+      %
+      % NOTES
+      %
+      \begin{tabularx}{185\unitlength}{X}
+        \tfont languages \& notes \tabularnewline\cmidrule(l){1-1}
+      \end{tabularx}
+    \end{minipage}
+  }}
+\end{picture}
+
+\newpage
+
+\noindent\begin{picture}(420,594)
+  %
+  % RIGHT COLUMN
+  %
+  \put(0,0){\makebox(210,580)[t]{
+    \begin{minipage}[t][580\unitlength][t]{210\unitlength}
+      %
+      % EQUIPMENT
+      %
+      \begin{tabularx}{210\unitlength}{A{50} X A{5} A{18}}
+        \multicolumn{2}{X}{\tfont equipment} && \lfont weight \tabularnewline\cmidrule(l){1-4}
+        \itemslot{head}
+        \itemslot{headband}
+        \itemslot{eyes}
+        \itemslot{neck}
+        \itemslot{shoulders}
+        \itemslot{body}
+        \itemslot{chest}
+        \itemslot{wrist}
+        \itemslot{hands}
+        \itemslot{ring}
+        \itemslot{ring}
+        \itemslot{belt}
+        \itemslot{feet}
+        \itemslot{armor}
+        \itemslot{in hand}
+        \itemgeneric
+        \itemslot{shield}
+        \itemslot{readied}
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric \tabularnewline
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+        \itemgeneric
+      \end{tabularx} \vspace{5mm}
+
+      %
+      % WEALTH
+      %
+      \begin{tabularx}{210\unitlength}{A{25} X A{25} X A{25} X A{25} X}
+         \multicolumn{8}{X}{\tfont wealth} \tabularnewline\cmidrule(l){1-8}
+         \nfont pp && \nfont gp && \nfont sp && \nfont cp & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}
+         \nfont gems \tabularnewline\cline{2-8}
+         \tabularnewline\cline{2-8}
+         \nfont other \tabularnewline\cline{2-8}
+         \tabularnewline\cline{2-8}
+      \end{tabularx} \vspace{5mm}
+
+      %
+      % CARRYING CAPACITY
+      %
+      \begin{tabularx}{210\unitlength}{A{30} X A{30} X A{30} X}
+        \multicolumn{6}{l}{\tfont carrying~capacity} \tabularnewline\cmidrule(l){1-6}
+        \nfont light && \nfont medium && \nfont heavy & \tabularnewline\cmidrule(l){2-2}\cmidrule(l){4-4}\cmidrule(l){6-6} \tabularnewline
+        \multicolumn{2}{c}{\nfont push / drag} &&&& \tabularnewline\cmidrule(l){3-6}
+        \multicolumn{2}{c}{\nfont off ground} &&&& \tabularnewline\cmidrule(l){3-6}
+        \multicolumn{2}{c}{\nfont over head} &&&& \tabularnewline\cmidrule(l){3-6}
+      \end{tabularx}
+    \end{minipage}
+  }}
+
+  %
+  % RIGHT COLUMN
+  %
+  \put(215,0){\makebox(205,580)[t]{
+    \begin{minipage}[t][580\unitlength][t]{205\unitlength}
+      %
+      % ABILITIES
+      %
+      \begin{tabularx}{205\unitlength}{X}
+        \tfont abilities \tabularnewline\cmidrule(l){1-1}
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+      \end{tabularx} \vspace{5mm}
+
+      %
+      % FEATS
+      %
+      \begin{tabularx}{205\unitlength}{X}
+        \tfont feats \tabularnewline\cmidrule(l){1-1}
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+      \end{tabularx} \vspace{5mm}
+
+      %
+      % TRAITS
+      %
+      \begin{tabularx}{205\unitlength}{X}
+        \tfont traits \tabularnewline\cmidrule(l){1-1}
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+        \abilityline
+      \end{tabularx} \vspace{5mm}
+      
+      %
+      % SPECIAL ITEMS AND NOTES
+      %
+      \begin{tabularx}{205\unitlength}{X}
+        \tfont special items \& notes \tabularnewline\cmidrule(l){1-1}
+      \end{tabularx}
+    \end{minipage}
+  }}
+\end{picture}
+
+\end{document}
