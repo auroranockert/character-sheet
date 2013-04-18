@@ -6,6 +6,14 @@ campaign settings) character sheet designed in LaTeX and I intend to use it for
 my next campaign.
 
 
+Building
+================================================================================
+
+I build the character sheet by running `xelatex birthright_char_sheet.tex` but
+there could possbly be other cool ways, for example by running another LaTeX
+implementation
+
+
 Notes
 ================================================================================
 
