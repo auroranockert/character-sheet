@@ -5,6 +5,10 @@ Birthright / Pathfinder (but possibly easily adapted for other pathfinder
 campaign settings) character sheet designed in LaTeX and I intend to use it for
 my next campaign.
 
+If you just want the PDF to check it out, get it [here!][sheet]
+
+ [sheet]: https://github.com/JensNockert/character-sheet/blob/master/birthright_char_sheet.pdf?raw=true
+
 
 Building
 ================================================================================
