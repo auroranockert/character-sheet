@@ -29,6 +29,10 @@
 \newcolumntype{E}[1]{@{}>{\lfont\raggedleft}b{#1\unitlength}@{}}
 \newcolumntype{F}[1]{@{\hspace{-0.5ex}}>{\small\raggedleft}m{#1\unitlength}@{\hspace{0.5ex}}}
 
+\newcommand\attributerow[1]{
+  \nfont #1 && && && && \tabularnewline\cmidrule(){3-3}\cmidrule(){5-5}\cmidrule(){7-7}\cmidrule(){9-9}\cmidrule(){11-11}\cmidrule(){13-13}
+}
+
 \newcommand\attackrow[2]{
   \nfont #1 && & $+$ & {\color{gray} \lfont (#2)} & $+$ && $+$ && $+$ && $=$ & \tabularnewline\cmidrule(){3-3}\cmidrule(){5-5}\cmidrule(){7-7}\cmidrule(){9-9}\cmidrule(){11-11}\cmidrule(){13-13}
 }

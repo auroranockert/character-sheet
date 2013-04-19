@@ -32,8 +32,31 @@
   %
   % LEFT COLUMN
   %
-  \put(0,30){\makebox(220,500)[t]{
-    \begin{minipage}[t][500\unitlength][b]{220\unitlength}
+  \put(0,30){\makebox(220,470)[t]{
+    \begin{minipage}[t][470\unitlength][b]{220\unitlength}
+      %
+      % ATTRIBUTES
+      %
+      \begin{tabularx}{220\unitlength}{X A{2} A{22} A{2} A{22} A{8} A{22} A{2} A{22} A{8} A{22} A{2} A{22}}
+        \tfont attributes && \lfont ability && \lfont mod. && \lfont item && \lfont mod && \lfont temp. && \lfont mod. \tabularnewline\cmidrule(l){1-13}
+        \attributerow{strength}
+        \attributerow{dexterity}
+        \attributerow{constitution}
+        \attributerow{intelligence}
+        \attributerow{willpower}
+        \attributerow{charisma}
+      \end{tabularx} \vspace{5mm}
+      
+      %
+      % HP
+      %
+      
+      \begin{tabularx}{220\unitlength}{X}
+        \tfont hitpoints \& wounds \tabularnewline\cmidrule(l){1-1}
+      \end{tabularx}
+      
+      \vfill
+      
       %
       % ATTACKS
       %
@@ -64,7 +87,6 @@
         \weapon
         \weapon
         \weapon
-        \weapon
       \end{tabularx} \vspace{5mm}
 
       %
@@ -72,7 +94,6 @@
       %
       \begin{tabularx}{220\unitlength}{X A{2} A{20} A{2} A{20} A{2} A{20} A{2} A{20}}
         \tfont armor && \lfont armor class && \lfont max dex. && \lfont check penalty && \lfont arcane failure \tabularnewline\cmidrule(l){1-9}
-        \armor
         \armor
         \armor
         \armor
