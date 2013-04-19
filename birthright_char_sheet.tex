@@ -33,33 +33,32 @@
   % LEFT COLUMN
   %
   \put(0,30){\makebox(220,500)[t]{
-    % \setlength{\fboxsep}{0cm}
-    % \makebox(100, 200)[t]{\parbox{100\unitlength}{
-    % \begin{tabularx}{100\unitlength}{B{45} B{10} B{45}}
-    %   \tfont hp && \tabularnewline\cline{1-3}
-    %   \nfont total && \nfont current \tabularnewline
-    %   && \tabularnewline\cline{1-1}\cline{3-3}
-    % \end{tabularx}
-    % }}
-    % \framebox(100, 200){\parbox{205\unitlength}{
-    % }}
-    
     \begin{minipage}[t][500\unitlength][b]{220\unitlength}
-      \begin{tabularx}{220\unitlength}{X}
-        \tfont attacks \tabularnewline\cmidrule(l){1-1}
-        \nfont melee \tabularnewline
-        \nfont ranged \tabularnewline
-        \nfont cmb \tabularnewline
+      %
+      % ATTACKS
+      %
+      \begin{tabularx}{220\unitlength}{X A{2} A{22} A{8} A{22} A{8} A{22} A{8} A{22} A{8} A{22} A{8} A{22}}
+        \tfont attacks && \lfont base && \lfont ability && \lfont size && \lfont misc. && \lfont temp. && \lfont total \tabularnewline\cmidrule(l){1-13}
+        \attackrow{melee}{str}
+        \attackrow{ranged}{dex}
+        \attackrow{cmb}{str}
       \end{tabularx} \vspace{5mm}
-      
-      \begin{tabularx}{220\unitlength}{X}
-        \tfont defense \tabularnewline\cmidrule(l){1-1}
-        \nfont ac \tabularnewline
-        \nfont cmd \tabularnewline
-        \nfont touch \tabularnewline
-        \nfont flat-foot \tabularnewline
+
+      %
+      % DEFENSE
+      %
+      \begin{tabularx}{220\unitlength}{X A{2} A{8} A{8} A{22} A{8} A{22} A{8} A{22} A{8} A{22} A{8} A{22} A{8} A{22}}
+        \tfont defense && && \lfont dex && \lfont armor && \lfont size && \lfont dodge && \lfont misc. && \lfont total \tabularnewline\cmidrule(l){1-15}
+        \defenserow{ac}{{\color{gray} \lfont (dex)}}{}{}
+        \defenserow{touch}{{\color{gray} \lfont (dex)}}{0}{}
+        \defenserow{flat}{0}{}{0}
+        \defenserow{cmd}{{\color{gray} \lfont (str+dex)}}{{\color{gray} \lfont (bab)}}{}
+        
       \end{tabularx} \vspace{5mm}
-      
+
+      %
+      % WEAPONS
+      %
       \begin{tabularx}{220\unitlength}{X A{2} A{12} A{2} A{12} A{2} A{12} A{2} A{12} A{2} A{20} A{2} A{20} A{2} A{20}}
         \tfont weapons && \multicolumn{7}{c}{\lfont base} && \lfont dmg && \lfont crit. && \lfont type \tabularnewline\cmidrule(l){1-15}
         \weapon
@@ -67,16 +66,22 @@
         \weapon
         \weapon
       \end{tabularx} \vspace{5mm}
-      
+
+      %
+      % ARMOR
+      %
       \begin{tabularx}{220\unitlength}{X A{2} A{20} A{2} A{20} A{2} A{20} A{2} A{20}}
         \tfont armor && \lfont armor class && \lfont max dex. && \lfont check penalty && \lfont arcane failure \tabularnewline\cmidrule(l){1-9}
         \armor
         \armor
         \armor
         \armor
-        \nfont total && && && && \tabularnewline\cmidrule(l){3-3}\cmidrule(l){5-5}\cmidrule(l){7-7}\cmidrule(l){9-9}
+        \nfont total && && && && \tabularnewline\cmidrule(){3-3}\cmidrule(){5-5}\cmidrule(){7-7}\cmidrule(){9-9}
       \end{tabularx} \vspace{5mm}
 
+      %
+      % SPEED
+      %
       \begin{tabularx}{220\unitlength}{X A{20} A{5} A{20}}
         \tfont speed & \lfont ft. && \lfont sq. \tabularnewline\cmidrule(l){1-4}
         \nfont base \tabularnewline\cline{2-2}\cline{4-4}
@@ -97,9 +102,9 @@
       %
       \begin{tabularx}{185\unitlength}{X A{18} A{8} A{18} A{8} A{18} A{8} A{18} A{8} A{18}}
          \tfont save & \lfont total && \lfont base && \lfont ability && \lfont misc && \lfont temp. \tabularnewline\cmidrule(l){1-10}
-         \nfont fortitude && $=$ && $+$ & {\color{gray} \lfont (con)} & $+$ && $+$ & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
-         \nfont reflex && $=$ && $+$ & {\color{gray} \lfont (dex)} & $+$ && $+$ & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
-         \nfont will && $=$ && $+$ & {\color{gray} \lfont (wis)} & $+$ && $+$ & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
+         \saverow{fortitude}{con}
+         \saverow{reflex}{dex}
+         \saverow{will}{wis}
          \nfont spell resistance \tabularnewline\cline{2-10}
          \nfont notes \tabularnewline\cline{2-10}
       \end{tabularx} \vspace{5mm}
@@ -228,11 +233,11 @@
       % CARRYING CAPACITY
       %
       \begin{tabularx}{210\unitlength}{A{30} X A{30} X A{30} X}
-        \multicolumn{6}{l}{\tfont carrying~capacity} \tabularnewline\cmidrule(l){1-6}
-        \nfont light && \nfont medium && \nfont heavy & \tabularnewline\cmidrule(l){2-2}\cmidrule(l){4-4}\cmidrule(l){6-6} \tabularnewline
-        \multicolumn{2}{c}{\nfont push / drag} &&&& \tabularnewline\cmidrule(l){3-6}
-        \multicolumn{2}{c}{\nfont off ground} &&&& \tabularnewline\cmidrule(l){3-6}
-        \multicolumn{2}{c}{\nfont over head} &&&& \tabularnewline\cmidrule(l){3-6}
+        \multicolumn{6}{l}{\tfont carrying~capacity} \tabularnewline\cmidrule(){1-6}
+        \nfont light && \nfont medium && \nfont heavy & \tabularnewline\cmidrule(){2-2}\cmidrule(){4-4}\cmidrule(){6-6} \tabularnewline
+        \multicolumn{2}{c}{\nfont push / drag} &&&& \tabularnewline\cmidrule(){3-6}
+        \multicolumn{2}{c}{\nfont off ground} &&&& \tabularnewline\cmidrule(){3-6}
+        \multicolumn{2}{c}{\nfont over head} &&&& \tabularnewline\cmidrule(){3-6}
       \end{tabularx}
     \end{minipage}
   }}
