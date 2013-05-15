@@ -50,7 +50,7 @@
 }
 
 \newcommand\skillcalculate[2]{
-  \nfont #1 & \classskillbox && $=$ & {\color{gray} \lfont (#2)} & $+$ && $+$ & \tabularnewline\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
+  \nfont #1 & \classskillbox && $+$ & {\color{gray} \lfont (#2)} & $+$ && $=$ & \tabularnewline\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
 }
 
 \newcommand\classskillbox{
@@ -58,7 +58,7 @@
 }
 
 \newcommand\saverow[2]{
-  \nfont #1 && $=$ && $+$ & {\color{gray} \lfont (#2)} & $+$ && $+$ & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
+  \nfont #1 && $+$ & {\color{gray} \lfont (#2)} & $+$ && $+$ && $=$ & \tabularnewline\cline{2-2}\cline{4-4}\cline{6-6}\cline{8-8}\cline{10-10}
 }
 
 \newcommand\skill[2]{
